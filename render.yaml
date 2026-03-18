@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: zerodha-clone-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: PORT
+        value: 3002
+      - key: MONGO_URL
+        sync: false
