@@ -1,68 +1,37 @@
-# Zerodha Clone
+# WealthWave (Zerodha Clone)
 
-This repository contains a clone of the Zerodha trading platform. The project is split into distinct components: a primary **Frontend** application for the landing page/public site, a **Dashboard** application for the trading interface, and a **Backend** service.
+Welcome to WealthWave! This is a modern, full-stack trading and investment platform inspired by Zerodha. 
 
-This README provides an overview of the frontend and dashboard components, how they work, and instructions to get them up and running locally.
-
----
-
-## 🖥️ Frontend
-
-The `frontend` application serves as the main entry point for users, typical of the main landing or marketing pages of the platform.
-
-### How it works
-- It is a **React 18** application scaffolded with Create React App.
-- It leverages **React Router DOM (v7)** to handle seamless, single-page routing between different informational pages.
-- Focuses on user-interface, responsiveness, and presenting the platform to new users.
-
-### Installation
-To install the dependencies for the frontend, open your terminal, navigate to the `frontend` directory, and run:
-
-```bash
-cd frontend
-npm install
-```
-
-### Running the Frontend
-To start the development server:
-```bash
-npm start
-```
-This runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will automatically reload if you make edits.
+The project is divided into three main parts:
+- **Frontend**: The public landing and marketing pages.
+- **Dashboard**: The protected trading interface where users view charts, track their portfolio, and perform trades.
+- **Backend**: The server that handles API requests, database connections, and user authentication.
 
 ---
 
-## 📊 Dashboard
+## 🚀 Tech Stack
 
-The `dashboard` application handles the core functionality of the trading platform. This is the protected area where users view charts, track their portfolio, and perform trading activities.
-
-### How it works
-- Also built with **React 18**.
-- **UI & Styling:** Uses **Material UI (MUI)** alongside **Emotion** for a sleek, modern, and highly customizable user interface and icon set (`@mui/icons-material`).
-- **Charting Engine:** Integrates **Chart.js** via **react-chartjs-2** to render real-time interactive financial charts and data visualizations.
-- **API Communication:** Uses **Axios** to communicate data securely with the backend APIs.
-- Routing is handled by **React Router DOM (v6)**.
-
-### Installation
-To install the dependencies for the dashboard, open a terminal window, navigate to the `dashboard` directory, and run:
-
-```bash
-cd dashboard
-npm install
-```
-
-### Running the Dashboard
-To start the development server:
-```bash
-npm start
-```
-If your frontend application is already running on port `3000`, the terminal will automatically ask you if you'd like to start the dashboard on a different port (typically `[http://localhost:3001](http://localhost:3001)`). Type `Y` to accept.
+- **Frontend & Dashboard:** React 18, React Router DOM
+- **UI & Styling:** Bootstrap (Frontend), Material UI & Emotion (Dashboard)
+- **Charts:** Chart.js via `react-chartjs-2`
+- **Backend:** Node.js, Express, Passport.js (Authentication)
+- **Database:** MongoDB (Mongoose)
 
 ---
 
-## 🚀 Working with Both Applications
+## 🛠️ How to Clone & Install
 
-To develop or test the whole platform locally, you need to run both applications concurrently in separate terminal instances:
+Follow these steps to get the project running locally on your machine.
+
+### 1. Clone the repository
+Open your terminal and run the following command to download the code:
+```bash
+git clone https://github.com/your-username/wealthwave.git
+cd wealthwave
+```
+
+### 2. Install dependencies & run the apps
+Because the project has three separate parts (Frontend, Dashboard, and Backend), you need to run them all at the same time. Open **three different terminal windows**, navigate to the main `wealthwave` folder in each, and run the following:
 
 **Terminal 1 (Frontend):**
 ```bash
@@ -70,6 +39,7 @@ cd frontend
 npm install
 npm start
 ```
+*Frontend runs on `http://localhost:3000`*
 
 **Terminal 2 (Dashboard):**
 ```bash
@@ -77,9 +47,28 @@ cd dashboard
 npm install
 npm start
 ```
+*Dashboard runs on `http://localhost:3001` (Accept the prompt to run on a different port)*
 
-*Note: You will also likely need to start the `backend` server in a third terminal to provide the necessary API responses for the applications to function fully.*
+**Terminal 3 (Backend):**
+```bash
+cd backend
+npm install
+npm start
+```
+*Backend runs on `http://localhost:3002` (or whichever port is configured)*
 
-### Prerequisites
-- Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
-- Both projects use standard `package.json` configurations, so you can substitute `npm` with `yarn` or `pnpm` if you prefer.
+---
+
+## ⚙️ Environment Variables
+
+To make the backend work, you need to connect it to a database. We use MongoDB.
+
+1. Navigate to the `backend` folder.
+2. Create a new file named `.env`.
+3. Add the following line to your new `.env` file:
+
+```env
+MONGO_URL=mongodb+srv://<your_username>:<your_password>@<your_cluster_url>/?appName=zerodha
+```
+
+*Make sure to replace `<your_username>`, `<your_password>`, and `<your_cluster_url>` with your actual MongoDB credentials. **Do not share this file publicly or commit it to GitHub!***
