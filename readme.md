@@ -1,4 +1,4 @@
-# WealthWave (Zerodha Clone)
+# WealthWave 
 
 Welcome to WealthWave! This is a modern, full-stack trading and investment platform inspired by Zerodha. 
 
