@@ -67,8 +67,3 @@ To make the backend work, you need to connect it to a database. We use MongoDB.
 2. Create a new file named `.env`.
 3. Add the following line to your new `.env` file:
 
-```env
-MONGO_URL=mongodb+srv://<your_username>:<your_password>@<your_cluster_url>/?appName=zerodha
-```
-
-*Make sure to replace `<your_username>`, `<your_password>`, and `<your_cluster_url>` with your actual MongoDB credentials. **Do not share this file publicly or commit it to GitHub!***
